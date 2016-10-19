@@ -19,17 +19,32 @@ angular.module('starter.controllers', [])
 
   console.log($stateParams);
 
+
   $http.get("https://mip-message.herokuapp.com/messages").then(function(response){
-    console.log(response);
-    $scope.data = response.data;
+      console.log(response);
+    $scope.message = response.data;
   });
+// Simple GET request example:
+// $http({
+//   method: 'GET',
+//   url: 'https://mip-message.herokuapp.com/messages'
+// }).then(function successCallback(response) {
+//     // this callback will be called asynchronously
+//     // when the response is available
+//     console.log(response.data);
+//   }, function errorCallback(response) {
+//     // called asynchronously if an error occurs
+//     // or server returns response with an error status.
+//   });
 
   $scope.send = function()
   {
     var dataWithPost = {
-      username: "Example",
-      message: "something"
+      username: "user.name",
+      message: "Message"
     };
+
+  console.log(dataWithPost);
 
   $http.post("https://mip-message.herokuapp.com/messages", dataWithPost).then(function(reponse){
     console.log(response);

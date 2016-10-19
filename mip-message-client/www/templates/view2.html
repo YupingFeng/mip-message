@@ -1,14 +1,25 @@
 <div class="list list-inset">
   <label class="item item-input">
-    <input type="text" placeholder="Email">
+    <input type="text" placeholder="Message">
   </label>
-  
-<button class="button button-small" ng-click = "send">
-  Submit
+
+
+<button class="button button-block button-positive" ng-click = "send">
+  Send
 </button>
 
 </div>
 
+<div class="list">
+
+    <a class="item item-icon-left">
+        <i class="icon ion-person"></i>
+      <h2>Venkman {{ d.username}} </h2>
+      <p>Back off, man. I'm a scientist. {{ d.message }}</p>
+    </a>
+
+</div>
+
 <div ng-reapt="d in data">
-<b>{{ d.username}}</b> {{ d.message }}
+<b>{{ d.username}} {{ d.message }}</b> 
 </div>
